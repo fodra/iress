@@ -3,7 +3,6 @@ import Application from './application';
 const path = require("path");
 const commandLineArgs = require("command-line-args");
 const getUsage = require("command-line-usage");
-const Package = require("./../package.json");
 
 const optionDefinitions = [
   { name: "version", alias: "v", type: Boolean },
@@ -20,7 +19,7 @@ const sections = [
     optionList: [
       {
         name: "commands",
-        typeLabel: "[underline]{command_file}",
+        typeLabel: "{underline command_file}",
         description: "List of robot commands."
       },
       {
@@ -35,15 +34,19 @@ const sections = [
 const options = commandLineArgs(optionDefinitions);
 const usage = getUsage(sections);
 
-if (options.version) {
-  console.log(`v${Package.version}`);
-  return -1;
+function main() {
+  if (options.version) {
+    console.log("v1.0.0");
+    return -1;
+  }
+
+  if (!options.commands) {
+    console.log(usage);
+    return -1;
+  }
+
+  Application.run(path.resolve(options.commands));
 }
 
-if (!options.commands) {
-  console.log(usage);
-  return -1;
-}
-
-Application.run(path.resolve(options.commands));
+main();
 
