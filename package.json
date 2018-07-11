@@ -1,0 +1,20 @@
+{
+  "name": "iress",
+  "version": "1.0.0",
+  "description": "Toy Robot implementation",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "istanbul cover node_modules/jasmine/bin/jasmine.js",
+    "start": "node src/main.js"
+  },
+  "author": "Andrew Artajos",
+  "license": "ISC",
+  "devDependencies": {
+    "istanbul": "^0.4.5",
+    "jasmine": "^3.1.0"
+  },
+  "dependencies": {
+    "command-line-args": "^5.0.2",
+    "command-line-usage": "^5.0.5"
+  }
+}
