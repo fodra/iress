@@ -15,7 +15,7 @@ export default class Application {
       .then(commands => {
         commands.forEach(command => {
           let operation = command.name.toLowerCase();
-          let args = (!command.args) ? [] : commands.args.split(",");
+          let args = (!command.args) ? [] : command.args.split(",");
           args = args.map(arg => arg.trim());
           args.push(table);
 
@@ -24,6 +24,6 @@ export default class Application {
           }
         });
       })
-      .catch(err => `An error occurred ${err.message}`);
+      .catch(err => console.log(`An error occurred ${err.message}`));
   }
 }

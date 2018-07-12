@@ -24,8 +24,6 @@ describe('Robot', () => {
 
   describe("getDirection", () => {
 
-
-
     it("should return NOWHERE initially", () => {
       expect(robot.getDirection()).toBe("NOWHERE");
     });

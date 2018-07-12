@@ -37,7 +37,7 @@ export default class Robot {
       this.x = xArg;
       this.y = yArg;
       this.facing = this.DIRECTIONS.indexOf(directionArg);
-      return this.report();
+      return true;
     }
     return false;
   }
