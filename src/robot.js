@@ -33,7 +33,7 @@ export default class Robot {
     let directionArg = args[2];
     let table = args[3];
 
-    if (this.isPointInside(xArg, yArg)) {
+    if (table.isPointInside(xArg, yArg)) {
       this.x = xArg;
       this.y = yArg;
       this.facing = this.DIRECTIONS.indexOf(directionArg);
@@ -47,6 +47,7 @@ export default class Robot {
       return false;
     }
     this.facing = (this.facing + 1) % this.DIRECTIONS.length;
+    return true;
   }
 
   left(args) {

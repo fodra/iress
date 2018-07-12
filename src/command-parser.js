@@ -1,6 +1,7 @@
 import Command from './command';
 
 const fs = require('fs');
+const readline = require('readline');
 
 export default class CommandParser {
 

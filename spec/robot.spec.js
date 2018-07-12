@@ -1,4 +1,5 @@
 import Robot from './../src/robot';
+import TableTop from './../src/table-top';
 
 describe('Robot', () => {
   let robot;
